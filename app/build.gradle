@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.codetron.imscodingtest'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.codetron.imscodingtest"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "io.insert-koin:koin-android:3.3.0"
+    implementation 'androidx.core:core-ktx:1.9.0'
+
+    implementation project(":abstraction")
+    implementation project(":resources")
+    implementation project(":main")
+    implementation project(":feet-calculator")
+    implementation project(":shirt-store")
+    implementation project(":splash")
+}

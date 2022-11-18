@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- main -->
+    <string name="title_main">SELAMAT DATANG DI TES TI\nPT IMS</string>
+    <string name="submit">Submit</string>
+    <string name="hint_name">Nama</string>
+    <string name="place_holder_name">Masukan nama anda</string>
+    <string name="error_name">Nama tidak boleh kosong</string>
+
+    <!-- menu -->
+    <string name="greetings">Halo, %s</string>
+    <string name="button_feet_calculator">Feet\nCalculator</string>
+    <string name="button_store">GG Store</string>
+</resources>
