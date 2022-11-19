@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Sport",
+    "color_hex": "#0000CB"
+  },
+  {
+    "id": 2,
+    "name": "Gothic",
+    "color_hex": "#F70000"
+  }
+]

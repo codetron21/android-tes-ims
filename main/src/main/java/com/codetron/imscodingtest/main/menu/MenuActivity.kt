@@ -24,9 +24,17 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun navigateTo(id: Int) {
-        when (id) {
-            0 -> startActivity(router.navigateToFeetCalculator(this))
+        val intent = when (id) {
+            0 -> router.navigateToFeetCalculator(this)
+            1 -> router.navigateToStore(this)
+            else -> throw  IllegalStateException("destination not found")
         }
+
+        startActivity(intent)
+        overridePendingTransition(
+            com.codetron.imscodingtest.resources.R.anim.anim_slide_right_in,
+            com.codetron.imscodingtest.resources.R.anim.anim_slide_left_out
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,9 +46,18 @@ class MenuActivity : AppCompatActivity() {
         actionListeners()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(
+            com.codetron.imscodingtest.resources.R.anim.anim_slide_left_in,
+            com.codetron.imscodingtest.resources.R.anim.anim_slide_right_out
+        )
+        accountManager.reset()
+    }
+
     private fun actionListeners() = with(binding) {
         buttonBack.setOnClickListener {
-            finish()
+            onBackPressed()
         }
     }
 

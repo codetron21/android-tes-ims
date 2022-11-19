@@ -13,6 +13,7 @@ import com.codetron.imscodingtest.abstraction.ActivityRouter
 import com.codetron.imscodingtest.main.databinding.ActivityMainBinding
 import com.codetron.imscodingtest.main.model.MainViewState
 import com.codetron.imscodingtest.main.model.NameValidator
+import com.codetron.imscodingtest.resources.R
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -46,6 +47,10 @@ class MainActivity : AppCompatActivity() {
             if (state is MainViewState.Success) {
                 accountManager.setName(state.data)
                 startActivity(router.navigateToMenu(this@MainActivity))
+                overridePendingTransition(
+                    R.anim.anim_slide_right_in,
+                    R.anim.anim_slide_left_out
+                )
             }
         }
 

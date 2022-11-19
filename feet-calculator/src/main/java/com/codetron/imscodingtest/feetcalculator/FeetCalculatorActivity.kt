@@ -1,8 +1,14 @@
 package com.codetron.imscodingtest.feetcalculator
 
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import com.codetron.imscodingtest.feetcalculator.databinding.ActivityFeetCalculatorBinding
@@ -63,14 +69,70 @@ class FeetCalculatorActivity : AppCompatActivity() {
         }
 
         buttonBack.setOnClickListener {
-            finish()
+            onBackPressed()
         }
     }
 
     private fun ActivityFeetCalculatorBinding.printResult(number: String, result: String?) {
         textResult.isVisible = result != null
         result ?: return
-        textResult.text = getString(R.string.result_format, number, result)
+        val formatResult = getString(R.string.result_format, number, result)
+        val span = SpannableString(formatResult)
+
+        val redColor = ContextCompat.getColor(
+            root.context,
+            com.codetron.imscodingtest.resources.R.color.secondary
+        )
+
+        val blueColor = ContextCompat.getColor(
+            root.context,
+            com.codetron.imscodingtest.resources.R.color.primary
+        )
+
+        val startValueF = 0
+        val endValueF = number.length
+        span.changeColor(redColor, startValueF, endValueF)
+        span.makeBold(startValueF, endValueF)
+
+        val startUnitF = number.length + 1
+        val endUnitF = number.length + 1 + 4
+        span.changeColor(blueColor, startUnitF, endUnitF)
+
+        val startValueM = formatResult.length - 5 - 1 - result.length
+        val endValueM = formatResult.length - 5 - 1
+        span.changeColor(redColor, startValueM, endValueM)
+        span.makeBold(startValueM, endValueM)
+
+        val startUnitM = formatResult.length - 5
+        val endUnitM = formatResult.length
+        span.changeColor(blueColor, startUnitM, endUnitM)
+
+        textResult.text = span
+    }
+
+    private fun SpannableString.makeBold(start: Int, end: Int) {
+        setSpan(
+            StyleSpan(Typeface.BOLD),
+            start, end,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+    }
+
+    private fun SpannableString.changeColor(color: Int, start: Int, end: Int) {
+        setSpan(
+            ForegroundColorSpan(color),
+            start,
+            end,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(
+            com.codetron.imscodingtest.resources.R.anim.anim_slide_left_in,
+            com.codetron.imscodingtest.resources.R.anim.anim_slide_right_out
+        )
     }
 
 }

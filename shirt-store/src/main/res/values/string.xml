@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_store">GG-Store</string>
+    <string name="categories">Kategori</string>
+    <string name="error_get_data">Gagal memuat data</string>
+</resources>

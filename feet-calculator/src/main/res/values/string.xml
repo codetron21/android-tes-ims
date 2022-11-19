@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="title_feet_calculator">Kalkulator konversi Feet ke Meter</string>
-    <string name="convert">Ubah</string>
+    <string name="calculate">Hitung</string>
     <string name="feet_unit">Ft</string>
     <string name="error_number_empty">Angka tidak boleh kosong</string>
     <string name="error_number_invalid">Input harus berupa angka</string>

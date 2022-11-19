@@ -6,6 +6,7 @@ import com.codetron.imscodingtest.abstraction.ActivityRouter
 import com.codetron.imscodingtest.feetcalculator.FeetCalculatorActivity
 import com.codetron.imscodingtest.main.main.MainActivity
 import com.codetron.imscodingtest.main.menu.MenuActivity
+import com.codetron.imscodingtest.shirtstore.store.StoreActivity
 
 class ActivityRouterImpl : ActivityRouter {
 
@@ -19,5 +20,9 @@ class ActivityRouterImpl : ActivityRouter {
 
     override fun navigateToFeetCalculator(context: Context): Intent {
         return Intent(context, FeetCalculatorActivity::class.java)
+    }
+
+    override fun navigateToStore(context: Context): Intent {
+        return Intent(context, StoreActivity::class.java)
     }
 }

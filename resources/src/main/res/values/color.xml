@@ -5,4 +5,5 @@
     <color name="black">#202020</color>
     <color name="white">#FFFFFF</color>
     <color name="grey">#9F9F9F</color>
+    <color name="blue_light">#00FFB7</color>
 </resources>

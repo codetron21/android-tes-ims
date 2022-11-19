@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Barcelona",
+    "price": 10000,
+    "description": "Barcelona jersey",
+    "quantity": 10,
+    "category_id": 1,
+    "photo_url": null
+  },
+  {
+    "id": 2,
+    "name": "Liverpool",
+    "price": 20000,
+    "description": "Liverpool jersey",
+    "quantity": 20,
+    "category_id": 1,
+    "photo_url": null
+  },
+  {
+    "id": 3,
+    "name": "Juventus",
+    "price": 30000,
+    "description": "Juventus jersey",
+    "quantity": 30,
+    "category_id": 1,
+    "photo_url": null
+  },
+  {
+    "id": 4,
+    "name": "Real Madrid",
+    "price": 40000,
+    "description": "Real Madrid jersey",
+    "quantity": 40,
+    "category_id": 1,
+    "photo_url": null
+  },
+  {
+    "id": 5,
+    "name": "Horror",
+    "price": 50000,
+    "description": "Super scream",
+    "quantity": 50,
+    "category_id": 2,
+    "photo_url": null
+  },
+  {
+    "id": 6,
+    "name": "Inferno",
+    "price": 20000,
+    "description": null,
+    "quantity": 30,
+    "category_id": 2,
+    "photo_url": null
+  },
+  {
+    "id": 7,
+    "name": "Supreme",
+    "price": 99000000,
+    "description": null,
+    "quantity": 1,
+    "category_id": 2,
+    "photo_url": null
+  },
+  {
+    "id": 8,
+    "name": "Hell of fire",
+    "price": 1000000,
+    "description": null,
+    "quantity": 5,
+    "category_id": 2,
+    "photo_url": null
+  }
+]

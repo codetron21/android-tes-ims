@@ -69,7 +69,6 @@ class FeetInputView @JvmOverloads constructor(
     }
 
     override fun onDraw(canvas: Canvas?) {
-        super.onDraw(canvas)
         val posX = if (length() < MAX_CHANGE_LENGTH) {
             measuredWidth
         } else {
@@ -112,6 +111,7 @@ class FeetInputView @JvmOverloads constructor(
                 textPlaceholderPaint
             )
         }
+        super.onDraw(canvas)
     }
 
     private fun initView() {
