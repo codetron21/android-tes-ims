@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <application>
+    <application android:theme="@style/Theme.IMSCodingTest">
         <activity
             android:name=".store.StoreActivity"
-            android:exported="true"
-            android:theme="@style/Theme.IMSCodingTest" />
+            android:exported="true" />
+        <activity
+            android:name=".product.ProductDetailActivity"
+            android:exported="true" />
     </application>
 </manifest>

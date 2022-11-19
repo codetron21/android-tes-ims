@@ -11,5 +11,7 @@ interface ActivityRouter {
 
     fun navigateToFeetCalculator(context: Context): Intent
 
-    fun navigateToStore(context: Context):Intent
+    fun navigateToStore(context: Context): Intent
+
+    fun navigateToProductDetail(context: Context): Intent
 }

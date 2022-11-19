@@ -20,7 +20,12 @@ class AccountManagerImpl : AccountManager {
     }
 
     override fun addProductToCart(id: Int) {
-        ids.add(id)
+        val productId = ids.find { it == id }
+        if (productId == null) {
+            ids.add(id)
+        } else {
+            ids.remove(id)
+        }
     }
 
     override fun reset() {

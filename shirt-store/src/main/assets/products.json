@@ -1,57 +1,12 @@
 [
   {
     "id": 1,
-    "name": "Barcelona",
+    "name": "Barcelona FC",
     "price": 10000,
     "description": "Barcelona jersey",
     "quantity": 10,
     "category_id": 1,
-    "photo_url": null
-  },
-  {
-    "id": 2,
-    "name": "Liverpool",
-    "price": 20000,
-    "description": "Liverpool jersey",
-    "quantity": 20,
-    "category_id": 1,
-    "photo_url": null
-  },
-  {
-    "id": 3,
-    "name": "Juventus",
-    "price": 30000,
-    "description": "Juventus jersey",
-    "quantity": 30,
-    "category_id": 1,
-    "photo_url": null
-  },
-  {
-    "id": 4,
-    "name": "Real Madrid",
-    "price": 40000,
-    "description": "Real Madrid jersey",
-    "quantity": 40,
-    "category_id": 1,
-    "photo_url": null
-  },
-  {
-    "id": 5,
-    "name": "Horror",
-    "price": 50000,
-    "description": "Super scream",
-    "quantity": 50,
-    "category_id": 2,
-    "photo_url": null
-  },
-  {
-    "id": 6,
-    "name": "Inferno",
-    "price": 20000,
-    "description": null,
-    "quantity": 30,
-    "category_id": 2,
-    "photo_url": null
+    "photo_url": "https://www.nicepng.com/png/detail/305-3050565_fc-barcelona-stadium-decept-mens-football-short-sleeve.png"
   },
   {
     "id": 7,
@@ -60,15 +15,46 @@
     "description": null,
     "quantity": 1,
     "category_id": 2,
-    "photo_url": null
+    "photo_url": "https://www.nicepng.com/png/detail/909-9097829_the-beyond-t-shirt-capital-punishment-t-shirt.png"
   },
   {
-    "id": 8,
-    "name": "Hell of fire",
-    "price": 1000000,
-    "description": null,
-    "quantity": 5,
+    "id": 2,
+    "name": "Liverpool",
+    "price": 20000,
+    "description": "Liverpool jersey",
+    "category_id": 1,
+    "photo_url": "https://www.nicepng.com/png/detail/386-3868958_liverpool-fc-short-sleeve-jersey-2013-14-liverpool.png"
+  },
+  {
+    "id": 3,
+    "name": "Juventus",
+    "price": 30000,
+    "description": "Juventus jersey",
+    "category_id": 1,
+    "photo_url": "https://www.nicepng.com/png/detail/193-1938060_juventus-18-19-home-jersey-cristiano-ronaldo-camisa.png"
+  },
+  {
+    "id": 5,
+    "name": "Horror",
+    "price": 50000,
+    "description": "Super scream",
     "category_id": 2,
-    "photo_url": null
+    "photo_url": "https://www.nicepng.com/png/detail/524-5240535_the-king-of-horror-face-logo-north-face.png"
+  },
+  {
+    "id": 4,
+    "name": "Real Madrid",
+    "price": 40000,
+    "description": "Real Madrid jersey",
+    "category_id": 1,
+    "photo_url": "https://www.nicepng.com/png/detail/136-1368796_maillot-third-real-madrid-2017-18-ddicac-par.png"
+  },
+  {
+    "id": 6,
+    "name": "Inferno 66666666666666",
+    "price": 20000,
+    "description": null,
+    "category_id": 2,
+    "photo_url": "https://www.nicepng.com/png/detail/307-3073740_rebel-ships-rebel-ships-26-by-starwars-tales.png"
   }
 ]

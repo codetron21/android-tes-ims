@@ -7,7 +7,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.codetron.imscodingtest.shirtstore.data.Category
 import com.codetron.imscodingtest.shirtstore.data.DataSources
+import com.codetron.imscodingtest.shirtstore.data.Product
 import com.codetron.imscodingtest.shirtstore.data.StoreState
+import com.codetron.imscodingtest.shirtstore.util.getData
 import kotlinx.coroutines.launch
 
 class StoreViewModel(
@@ -15,6 +17,7 @@ class StoreViewModel(
 ) : ViewModel() {
 
     private val _stateCategories = MutableLiveData<StoreState<List<Category>>>()
+    private val _stateProducts = MutableLiveData<StoreState<List<Product>>>()
 
     fun getCategories() = viewModelScope.launch {
         _stateCategories.value = StoreState.Loading
@@ -39,15 +42,28 @@ class StoreViewModel(
     }
 
     fun selectCategory(id: Int) {
-        val data = getDataCategories().map {
+        val data = _stateCategories.value?.getData()?.map {
             it.apply { it.isSelected = it.id == id }
-        }
+        } ?: emptyList()
+
         _stateCategories.value = StoreState.Success(data)
+    }
+
+    fun getProducts() = viewModelScope.launch {
+        _stateProducts.value = StoreState.Loading
+        val category = _stateCategories.value?.getData()?.find { it.isSelected }
+        if (category == null) {
+            _stateProducts.value = StoreState.Error(Exception())
+            return@launch
+        }
+        val result = dataSources.filterProductsByCategory(category.id)
+        Log.d(TAG, result.toString())
+        _stateProducts.value = StoreState.Success(result)
     }
 
     fun getStateCategories(): LiveData<StoreState<List<Category>>> = _stateCategories
 
-    fun getDataCategories() = (_stateCategories.value as? StoreState.Success)?.data ?: emptyList()
+    fun getStateProducts(): LiveData<StoreState<List<Product>>> = _stateProducts
 
     companion object {
         private const val TAG = "StoreViewModel"

@@ -13,11 +13,25 @@ class StoreDataSources(
 ) : DataSources {
 
     override fun getAllProducts(): List<Product> {
-        return readProductsJson()
+        val products = readProductsJson()
+        products.forEach { product ->
+            product.category = product.categoryId?.let { categoryId ->
+                getCategoryById(categoryId)
+            }
+        }
+        return products
     }
 
     override fun filterProductsByCategory(categoryId: Int): List<Product> {
-        return emptyList()
+        val result = getAllProducts().filter {
+            it.categoryId == categoryId
+        }
+
+        if (result.isEmpty()) {
+            return getAllProducts()
+        }
+
+        return result
     }
 
     override fun getAllCategories(): List<Category> {
@@ -25,11 +39,13 @@ class StoreDataSources(
     }
 
     override fun getProductById(id: Int): Product? {
-        return null
+        val products = getAllProducts()
+        return products.find { it.id == id }
     }
 
     override fun getCategoryById(id: Int): Category? {
-        return null
+        val categories = getAllCategories()
+        return categories.find { it.id == id }
     }
 
     private fun readCategoriesJson(): List<Category> {
