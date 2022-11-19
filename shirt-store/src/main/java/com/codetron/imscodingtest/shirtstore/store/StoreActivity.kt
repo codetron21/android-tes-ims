@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.codetron.imscodingtest.abstraction.AccountManager
 import com.codetron.imscodingtest.abstraction.ActivityRouter
 import com.codetron.imscodingtest.resources.R
+import com.codetron.imscodingtest.shirtstore.cart.CartBottomSheetDialogFragment
 import com.codetron.imscodingtest.shirtstore.data.Product
 import com.codetron.imscodingtest.shirtstore.data.StoreState
 import com.codetron.imscodingtest.shirtstore.databinding.ActivityStoreBinding
@@ -114,7 +115,10 @@ class StoreActivity : AppCompatActivity() {
 
     private fun setupView() = with(binding) {
         buttonCart.setOnClickListener {
-            //todo:show cart
+            CartBottomSheetDialogFragment().run {
+                show(supportFragmentManager, null)
+                setClickListener { checkCart() }
+            }
         }
 
         buttonBack.setOnClickListener {

@@ -9,6 +9,7 @@
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="buttonStyle">@style/ButtonStyle</item>
+        <item name="shapeAppearanceLargeComponent">@style/LargeShapeStyle</item>
     </style>
 
     <style name="Theme.IMSCodingTest.FullScreen">

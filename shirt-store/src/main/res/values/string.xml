@@ -6,4 +6,5 @@
     <string name="none">Tidak ada</string>
     <string name="label_description">Deskripsi:</string>
     <string name="account_choose">%s\nkamu memilih produk:</string>
+    <string name="cart_empty">Keranjang kosong</string>
 </resources>
