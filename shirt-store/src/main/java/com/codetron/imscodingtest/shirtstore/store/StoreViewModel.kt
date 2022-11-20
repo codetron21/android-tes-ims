@@ -1,6 +1,5 @@
 package com.codetron.imscodingtest.shirtstore.store
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -38,7 +37,6 @@ class StoreViewModel(
 
             _stateCategories.value = StoreState.Success(newResult)
         }
-        Log.d(TAG, result.toString())
     }
 
     fun selectCategory(id: Int) {
@@ -49,15 +47,14 @@ class StoreViewModel(
         _stateCategories.value = StoreState.Success(data)
     }
 
-    fun getProducts() = viewModelScope.launch {
+    fun getProducts(categories: List<Category> = emptyList()) = viewModelScope.launch {
         _stateProducts.value = StoreState.Loading
-        val category = _stateCategories.value?.getData()?.find { it.isSelected }
+        val category = categories.find { it.isSelected }
         if (category == null) {
             _stateProducts.value = StoreState.Error(Exception())
             return@launch
         }
         val result = dataSources.filterProductsByCategory(category.id)
-        Log.d(TAG, result.toString())
         _stateProducts.value = StoreState.Success(result)
     }
 

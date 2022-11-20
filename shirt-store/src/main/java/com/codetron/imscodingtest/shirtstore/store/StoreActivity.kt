@@ -16,6 +16,7 @@ import com.codetron.imscodingtest.shirtstore.data.Product
 import com.codetron.imscodingtest.shirtstore.data.StoreState
 import com.codetron.imscodingtest.shirtstore.databinding.ActivityStoreBinding
 import com.codetron.imscodingtest.shirtstore.product.ProductDetailActivity
+import com.codetron.imscodingtest.shirtstore.util.getData
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -39,7 +40,7 @@ class StoreActivity : AppCompatActivity() {
         CategoriesAdapter().apply {
             setOnClickListener { id ->
                 viewModel.selectCategory(id)
-                viewModel.getProducts()
+                viewModel.getProducts(getCategories())
             }
         }
     }
@@ -51,12 +52,14 @@ class StoreActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             viewModel.getCategories()
-            viewModel.getProducts()
+            viewModel.getProducts(getCategories())
         }
 
         observeViewModel()
         setupView()
     }
+
+    fun getCategories() = viewModel.getStateCategories().value?.getData() ?: emptyList()
 
     override fun onResume() {
         super.onResume()
