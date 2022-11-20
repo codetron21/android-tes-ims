@@ -8,6 +8,7 @@ import android.text.InputFilter
 import android.text.InputType
 import android.util.AttributeSet
 import android.util.TypedValue
+import android.view.inputmethod.EditorInfo
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import com.codetron.imscodingtest.resources.util.dp
@@ -117,6 +118,7 @@ class FeetInputView @JvmOverloads constructor(
     private fun initView() {
         background = null
         maxLines = 1
+        imeOptions = EditorInfo.IME_ACTION_DONE
         textAlignment = TEXT_ALIGNMENT_CENTER
         clipToOutline = false
         minWidth = largeTextSize.toInt()
